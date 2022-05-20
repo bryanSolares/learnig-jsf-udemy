@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/faceletes"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<!--  	<h:outputStylesheet library="css" name="main.css"></h:outputStylesheet>-->
+	<meta name="viewport" content="width-device-width, user-scalable=no"></meta>
+</h:head>
+
+<body>
+	<div class="ui-fluid">
+		<h:form id="formLogin">
+		
+		<p:growl id="growl" showDetail="false" sticky="true" />
+		
+			<p:panel header="Inicio Sesion">
+				<p:panelGrid id="pnlGridLogin" columns="2"
+					columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4" layout="grid"
+					styleClass="ui-panel-grid-blank ui-fluid">
+					
+					<p:outputLabel class="colortext" value="Username: " for="txtUsername"/>
+					<p:inputText id="txtUsername" value="#{loginBean.username}"
+						required="true" requiredMessage="El usuario es requerido" />
+
+					<p:outputLabel class="colortext" value="Password: " for="txtPassword"/>
+					<p:password id="txtPassword" value="#{loginBean.password}"
+						required="true" requiredMessage="El password es requerido" />
+
+					<p:outputLabel></p:outputLabel>
+					<p:commandButton value="Login" action="#{loginBean.ingresar()}" update="pnlGridLogin growl"/>
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+	</div>
+</body>
+
+</html>

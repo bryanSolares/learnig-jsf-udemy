@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/faceletes"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+		<title>Principal</title>
+	<h:outputStylesheet library="css" name="main.css"></h:outputStylesheet>
+</h:head>
+<h:body>
+	<h1>Bienvenido</h1>
+
+	<h:dataTable headerClass="headertable" rowClasses="rowtable rowtableline" id="tblEmpleados" var="empleado"
+		value="#{principalBean.empleados}">
+		<h:column>
+			<f:facet name="header">Nombre</f:facet>
+			<h:outputText value="#{empleado.nombre}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Primer Apellido</f:facet>
+			<h:outputText value="#{empleado.primerApellido}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Segundo Apellido</f:facet>
+			<h:outputText value="#{empleado.segundoApellido}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Puesto</f:facet>
+			<h:outputText value="#{empleado.puesto}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Estatus</f:facet>
+			<h:outputText value="ACTIVO" rendered="#{empleado.estatus}" />
+			<h:outputText value="INACTIVO" rendered="#{!empleado.estatus}" />
+		</h:column>
+	</h:dataTable>
+</h:body>
+</html>

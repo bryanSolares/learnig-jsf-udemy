@@ -1,0 +1,22 @@
+.colortext{
+	color: green;
+}
+
+.headertable{
+	background: none repeat	scroll 0 0 #e5e5e5;
+	border-bottom: 1px solid #bbbbbb;
+	padding: 16px; 
+	text-align: center
+}
+
+.rowtable{
+	background: none repeat scrollbar 0 0 #ffffff;
+	border-top: 1px solid #bbbbbb;
+	text-align: center;
+}
+
+.rowtableline{
+	text-align: center;
+	background: none repeat scrollbar 0 0 #f9f9f9;
+	border-top: 1px solid #bbbbbb;
+}

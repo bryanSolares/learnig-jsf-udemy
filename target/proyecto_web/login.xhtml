@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/faceletes"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+</h:head>
+
+<body>
+	<h:form id="formLogin">
+		<h:panelGrid columns="2">
+			<h:outputLabel class="colortext" value="Username: " />
+			<h:inputText id="txtUsername" value="#{loginBean.username}"
+				required="true" requiredMessage="El usuario es requerido" />
+
+			<h:outputLabel class="colortext" value="Password: " />
+			<h:inputSecret id="txtPassword" value="#{loginBean.password}"
+				required="true" requiredMessage="El password es requerido" />
+
+			<h:commandButton value="Login" action="#{loginBean.ingresar()}" />
+		</h:panelGrid>
+	</h:form>
+</body>
+
+</html>
